@@ -1,0 +1,25 @@
+﻿@using EPiServer.Core
+@using Raheel.Models.Pages
+@model Raheel.Models.ViewModels.NewsPageViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.CurrentPage.Name</title>
+</head>
+<body>
+    <h2>List of Articles</h2>
+    @foreach (NewsPage item in Model.ListOfNews)
+    {
+        <h3>@Html.ContentLink(item) <small>by @item.CreatedBy</small></h3>
+        <p>@item.Title</p>
+    }
+
+    @for (int i = 0; i <= Model.NumberOfPages; i++)
+    {   
+        <div>
+            <a href="/en/news?page=@i">@i</a>
+        </div>
+    }
+</body>
+</html>

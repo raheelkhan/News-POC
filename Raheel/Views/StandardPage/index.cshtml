@@ -1,0 +1,11 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model Raheel.Models.Pages.StandardPage
+
+<div>
+    <h1>
+        @Html.PropertyFor(m => m.MainHeading)
+    </h1>  
+    @Html.PropertyFor(m => m.MainBody)
+</div>
